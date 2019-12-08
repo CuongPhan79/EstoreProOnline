@@ -1,0 +1,56 @@
+<% block('localCss', '<link rel="stylesheet" href="/vendors/select2/select2.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/formvalidation/formValidation.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/dropify/dropify.min.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/select2/select2.min.css">') %>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="card">
+            <div class="card-body">
+              
+              <div class="row">
+                <div class="col-5">
+                    <img width="250px" class="mx-auto d-block img-thumbnail" src=<%=productObj.img%>>
+                </div>
+                <div class="col-7">
+                    <div class="card-title">
+                      <%=productObj.title%>
+                    </div>
+                    <p class="card-description"><%=productObj.description%></p>
+                    <h1 class="display-3 text-danger">
+                        <%=productObj.price%> đ
+                    </h1>
+                    <ul class="list-ticked">
+                      <li>Thương hiệu: <%=productObj.brand.title%></li>
+                      <li>Loại sản phẩm: <%=productObj.productType.title%></li>
+                    </ul>
+                    
+                    
+                </div>
+              </div>
+             
+           
+              
+              <div class="alert d-none" style="text-align:center" role="alert">
+                  <i class="mdi mdi-alert-circle"></i>
+              </div>
+              <div class="modal-footer row-button-fluid">
+                <a class="btn btn-light"  href="/">Trở về</a>
+                <button id="btnFormProduct" 
+                 type="submit" class="btn btn-primary waves-effect waves-classic" data-target=<%userActive?userActive:''%>>
+                  Thêm vào giỏ hàng
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+     
+      <div class="col-1"></div>
+  
+</div>
+<% block('localScripts', '<script src="/vendors/select2/select2.full.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/formvalidation/formValidation.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/formvalidation/framework/bootstrap4.min.js"></script>') %>
+<% block('localScripts', '<script src="/js/backend/product/form.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/sweetalert/sweetalert.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/select2/select2.js"></script>') %>

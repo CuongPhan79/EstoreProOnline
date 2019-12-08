@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-primary">
+                <li class="breadcrumb-item"><a href="/">Tất cả</a></li>
+                <%for(productType of productTypeObj){%>
+                <li class="breadcrumb-item"><a href="/<%=productType.id%>"><%=productType.title%></a></li>
+                <%}%>
+            </ol>
+        </nav>
+    </div>
+    <div class="col-1"></div>
+</div>

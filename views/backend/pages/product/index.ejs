@@ -1,0 +1,49 @@
+<% block('localCss', '<link rel="stylesheet" href="/vendors/select2/select2.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/formvalidation/formValidation.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/dropify/dropify.min.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/select2/select2.min.css">') %>
+<%if(productObj.length==0){%>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">    
+            <h1 class="display-2">Không tìm thấy sản phẩm nào</h1>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+<%} else{%>
+    <div class="row">
+        <%for(product of productObj){%>
+        <div class="col-md-3 col-xl-2 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <div class="row">             
+                        <div class="col-12">
+                            <img width="150px" height="100px" class="mx-auto d-block img-thumbnail" src=<%=product.img%>>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <p><%= product.title%></p>
+                        <h2 class="mb-0 text-danger"><%= product.price%> đ</h2>
+                    </div>
+                    <a href="/product/<%=product.id%>">
+                        <div class="icon-box-primary icon-box-md">
+                        <i class="mdi mdi-cart"></i>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </div>
+<%}%>
+<% block('localScripts', '<script src="/vendors/select2/select2.full.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/formvalidation/formValidation.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/formvalidation/framework/bootstrap4.min.js"></script>') %>
+<% block('localScripts', '<script src="/js/backend/product/index.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/sweetalert/sweetalert.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/select2/select2.js"></script>') %>

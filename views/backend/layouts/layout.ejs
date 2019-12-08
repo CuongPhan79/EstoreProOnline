@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="vi">
+
+<head>
+  <title>EstorePro Online</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="">
+  <meta name="author" content="ZiniSoft.NET">
+
+  <% /* Viewport tag for sensible mobile support */ %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <% /*
+          Stylesheets
+          ========================
+          Stylesheets can be hard-coded as `<link>` tags, automatically injected
+          by the asset pipeline between "STYLES" and "STYLES END", or both.
+          (https://sailsjs.com/docs/concepts/assets/task-automation)
+      */ %>
+  <% /* Auto-injected <link> tags: */ %>
+  <!--STYLES BACKEND-->
+  <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <%- blocks.localCss %>
+  <link rel="stylesheet" href="/styles/backend/style.css">
+  <link rel="stylesheet" href="/styles/backend/custom.css">
+  <link rel="stylesheet" href="/vendors/dropify/dropify.min.css">
+  <!--STYLES BACKEND END-->
+
+</head>
+
+<body class="sidebar-dark">
+    <div class="container-scroller">
+        <%- partial('../partials/header-logined.ejs') %>
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+              <%- partial('../partials/breadcrumb.ejs') %>
+              <div class="content-wrapper">
+                <%- body %>
+              </div>
+            </div>
+           
+        </div>
+        <% /*
+            Client-side JavaScript
+            ========================
+    
+            Scripts can be hard-coded as <script> tags, automatically injected
+            by the asset pipeline between "SCRIPTS" and "SCRIPTS END", or both.
+            (https://sailsjs.com/docs/concepts/assets/task-automation)
+          */ %>
+    
+        <% /* Delete the global `self` to help avoid client-side bugs.
+      (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
+        <script>delete window.self;</script>
+    
+        <% /* Auto-injected <script> tags: */ %>
+        <!--SCRIPTS BACKEND-->
+        <script src="/dependencies/lodash.js"></script>
+    <script src="/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/vendors/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="/vendors/asscrollable/jquery-asScrollable.js"></script>
+    <script src="/vendors/mousewheel/jquery.mousewheel.min.js"></script>
+    <script src="/vendors/ashoverscroll/jquery-asHoverScroll.js"></script>
+    <script src="/dependencies/cloud.js"></script>
+    <script src="/js/backend/cloud.setup.js"></script>
+    <script src="/js/backend/base.js"></script>
+    <!--SCRIPTS BACKEND END-->
+
+
+    <script src="/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="/vendors/validate/validator.min.js"></script>
+    <script src="/vendors/dropify/dropify.min.js"></script>
+    <%- blocks.localScripts %>
+    <script src="/js/backend/main.js"></script>
+        <script>
+          var EKPAction = '<%=moduleActive.action%>';
+          var layout = 'layout';
+          var UPLOAD = {
+            EXTENSION: ['.png', '.jpg', '.jpeg', '.gif', '.heic']
+          };
+        </script>
+      </div>
+</body>
+
+</html>
